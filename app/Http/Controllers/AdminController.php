@@ -84,6 +84,11 @@ class AdminController extends Controller
         return view('admin.admin_change_password', compact('profileData'));
     } //  end method
 
+    public function adminCustomerList()
+    {
+        return view('admin.customer.admin_customer_list');
+    }
+
 
 
 }

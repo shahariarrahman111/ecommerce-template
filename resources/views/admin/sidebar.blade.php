@@ -21,8 +21,8 @@
             </li>
 
             <li class="nav-item mt-1">
-                <a href=""
-                    class="nav-link">
+                <a href="{{ route('admin.customer.list') }}" class="nav-link">
+                
                     <i class="link-icon" data-feather="user"></i>
                     <span class="link-title">Customers</span>
                 </a>
