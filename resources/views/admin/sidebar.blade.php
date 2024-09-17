@@ -28,6 +28,22 @@
                 </a>
             </li>
 
+            <li class="nav-item mt-1">
+                <a href="{{ route('admin.category.list') }}" class="nav-link">
+                
+                    <i class="link-icon" data-feather="list"></i>
+                    <span class="link-title">Category</span>
+                </a>
+            </li>
+
+            <li class="nav-item mt-1">
+                <a href="{{ route('admin.product.list') }}" class="nav-link">
+                
+                    <i class="link-icon" data-feather="package"></i>
+                    <span class="link-title">Product</span>
+                </a>
+            </li>
+
            
 
 

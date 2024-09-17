@@ -11,7 +11,7 @@
           <div class="card">
             <div class="card-body">
               <div class="d-flex justify-content-between align-items-baseline mb-2">
-                <h6 class="card-title mb-0">Customers</h6>
+                <h6 class="card-title mb-0">Categorys</h6>
               </div>
               <div class="table-responsive">
                 <table class="table table-hover mb-0">
@@ -21,7 +21,8 @@
                         <th class="pt-0">Customer</th>
                         <th class="pt-0">Product</th>
                         <th class="pt-0">Amount</th>
-                        <th class="pt-0">Status</th>
+                        <th>   <a href=""><button>Add</button></a></th>
+                        {{-- <th class="pt-0">Status</th> --}}
                       </tr>
                     </thead>
                     <tbody>

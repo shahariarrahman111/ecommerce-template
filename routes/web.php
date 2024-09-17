@@ -38,6 +38,14 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     // admin customer list
 
     Route::get('/customer-list', [AdminController::class, 'adminCustomerList'])->name('admin.customer.list');
+
+    //  admin product list
+
+    Route::get('/category-list', [AdminController::class, 'adminCategoryList'])->name('admin.category.list');
+
+    // Admin Product List
+
+    Route::get('/product-list', [AdminController::class, 'adminProductList'])->name('admin.product.list');
 });
 
 
