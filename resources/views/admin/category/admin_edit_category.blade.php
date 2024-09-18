@@ -8,7 +8,7 @@
     <nav class="page-breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{route('admin.categories')}}">Product Categories</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Add Product Category</li>
+            <li class="breadcrumb-item active" aria-current="page">Edit Product Category</li>
         </ol>
     </nav>
 
@@ -18,28 +18,31 @@
         <div class="col-12 stretch-card">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Add Product Category Name</h4>
+                    <h4 class="card-title">Edit Product Category Name</h4>
     
-                    <form action="{{route('admin.category.store')}}" method="post" enctype="multipart/form-data">
+                    <form action="{{route('admin.update.category')}}" method="post" enctype="multipart/form-data">
                         @csrf
+                        @method('PUT')
     
                         <div class="mb-3">
                             <label for="category" class="form-label">Product Category</label>
-                            <input type="text" id="category" class="form-control" name="category_name">
+                            <input type="text" id="category" class="form-control" name="category_name"
+                            value="{{$category->category_name}}">
                         </div>
     
                         
                         <div class="mb-3">
-                            <label for="category" class="form-label">Product Photo</label>
+                            <label for="category" class="form-label">Category Photo</label>
                             <input type="file" name="photo" class="form-control" id = "image" autocomplete="off">
                         </div>
 
                         <div class="mb-3">
                             <img id="showImage" class="wd-150 rounded" height="150px"
-                             src="{{url('upload/no_image.jpg')}}" alt="profile">
+                             src="{{ $category->photo ? asset('upload/admin_image' .$category->photo) : url('upload/no_image.jpg')}}" 
+                             alt="profile">
                         </div>
 
-                        <input type="submit" class="btn btn-primary" value="Add Category">    
+                        <input type="submit" class="btn btn-primary" value="Update Category">    
 
                     </form>
                 </div>
