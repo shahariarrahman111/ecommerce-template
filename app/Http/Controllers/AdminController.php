@@ -100,6 +100,32 @@ class AdminController extends Controller
         return view('admin.product.admin_product_list');
     }
 
+    public function addCategory()
+    {
+        return view('admin.category.admin_add_category');
+    }
 
+    public function storeCatagory(Request $request)
+    {
+        $categories = Category::create([
+            'photo' => $request->input('photo'),
+            'category_name' => $request->input('category_name'),
+        ]);
+        return redirect()->route('admin.add.category');
+    }
+
+    public function addProduct()
+    {
+        return view('admin.product.admin_add_product');
+    }
+
+    public function storeProduct(Request $request)
+    {
+        $Products = Product::create([
+            'photo' => $request->input('photo'),
+            'product_name' => $request->input('product_name'),
+        ]);
+        return redirect()->route('admin.add.product');
+    }
 
 }
