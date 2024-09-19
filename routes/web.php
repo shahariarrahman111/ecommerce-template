@@ -51,7 +51,7 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
 
     
 
-    // Admin Product List
+    // Admin Product List......
 
     Route::get('/product-list', [AdminController::class, 'adminProductList'])->name('admin.product.list');
     Route::get('/add-product', [AdminController::class, 'addProduct'])->name('admin.add.product');
