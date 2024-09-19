@@ -7,7 +7,7 @@
 
     <nav class="page-breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{route('admin.categories')}}">Product Categories</a></li>
+            <li class="breadcrumb-item"><a href="{{route('admin.edit.category', $category->id )}}">Product Categories</a></li>
             <li class="breadcrumb-item active" aria-current="page">Edit Product Category</li>
         </ol>
     </nav>
@@ -20,7 +20,7 @@
                 <div class="card-body">
                     <h4 class="card-title">Edit Product Category Name</h4>
     
-                    <form action="{{route('admin.update.category')}}" method="post" enctype="multipart/form-data">
+                    <form action="{{route('admin.update.category', $category->id )}}" method="post" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
     
@@ -38,7 +38,7 @@
 
                         <div class="mb-3">
                             <img id="showImage" class="wd-150 rounded" height="150px"
-                             src="{{ $category->photo ? asset('upload/admin_image' .$category->photo) : url('upload/no_image.jpg')}}" 
+                             src="{{ $category->photo ? asset('upload/admin_images/' .$category->photo) : url('upload/no_image.jpg')}}" 
                              alt="profile">
                         </div>
 

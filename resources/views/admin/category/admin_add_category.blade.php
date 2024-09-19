@@ -7,7 +7,7 @@
 
     <nav class="page-breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{route('admin.categories')}}">Product Categories</a></li>
+            <li class="breadcrumb-item"><a href="{{route('admin.add.category')}}">Product Categories</a></li>
             <li class="breadcrumb-item active" aria-current="page">Add Product Category</li>
         </ol>
     </nav>
@@ -20,7 +20,7 @@
                 <div class="card-body">
                     <h4 class="card-title">Add Product Category Name</h4>
     
-                    <form action="{{route('admin.category.store')}}" method="post" enctype="multipart/form-data">
+                    <form action="{{route('admin.store.category')}}" method="post" enctype="multipart/form-data">
                         @csrf
     
                         <div class="mb-3">
