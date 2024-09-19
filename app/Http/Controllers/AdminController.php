@@ -111,9 +111,52 @@ class AdminController extends Controller
             'photo' => $request->input('photo'),
             'category_name' => $request->input('category_name'),
         ]);
-        return redirect()->route('admin.add.category');
+        return redirect()->route('admin.view.category');
     }
 
+    public function viewCategory()
+    {
+        $categories = Category::all();
+
+        return view('admin.category.admin_category_list', compact('categories'));
+    }
+
+    public function editCaregory($id)
+    {
+        $category = Category::findOrFail($id);
+
+        return view('admin.category.admin_edit_category', compact('category'));
+    }
+
+    public function updateCategory(Request $request, $id)
+    {
+
+        $category = Category::findOrFail($id);
+
+        $category->update([
+            'photo' => $request->input('photo'),
+            'category_name' => $request->input('category_name'),
+        ]);
+
+        return redirect()->route('admin.view.category');
+
+    }
+
+    public function deleteCategory($id)
+    {
+        $category = Category::findOrFail($id);
+        $category->delete();
+
+        return redirect()->back();
+    }
+
+   
+   
+   
+        // Product Controller
+
+
+        
     public function addProduct()
     {
         return view('admin.product.admin_add_product');
@@ -127,5 +170,6 @@ class AdminController extends Controller
         ]);
         return redirect()->route('admin.add.product');
     }
+    
 
 }

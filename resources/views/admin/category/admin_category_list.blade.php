@@ -40,15 +40,17 @@
 
                             </thead>
                             <tbody>
-                                @foreach ($categories as $category)
+                                @foreach ( $categories as $category )
                                     <tr>
+                                        <td>{{$loop->iteration}}</td>
                                         <td>
                                             <img src="{{asset('upload/admin_image' . $category->photo)}}" alt="Category Image"
                                             style="width: 50px; height: 50px;"">
                                         </td>
                                         <td>{{$category->category_name}}</td>
                                         <td>
-                                            <a href="{{route('admin.edit.category', $category->id)}}" class="btn btn-info btn-sm">Edit</a>
+                                            <a href="{{route('admin.edit.category', $category->id)}}"
+                                                 class="btn btn-info btn-sm">Edit</a>
                                             <form action="{{route('admin.delete.category', $category->id)}}" method="post"
                                                 style="display: inline;">
                                                 @csrf
@@ -67,10 +69,6 @@
             </div>
         </div>
                            
-
-
-
-
 
     </div>
 @endsection
